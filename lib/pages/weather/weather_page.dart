@@ -49,10 +49,10 @@ class _WeatherPageState extends State<WeatherPage> with StatefulWidgetUtilsMixin
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Weather App"),
+        title: const Text("Weather App"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.color_lens),
+            icon: const Icon(Icons.color_lens),
             onPressed: () => _themeBloc.add(ThemeToggleEvent()),
           )
         ],
@@ -92,8 +92,8 @@ class _WeatherPageState extends State<WeatherPage> with StatefulWidgetUtilsMixin
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.location_on),
-              SizedBox(width: 4.0),
+              const Icon(Icons.location_on),
+              const SizedBox(width: 4.0),
               Text(
                 weatherData.areaName,
                 style: AppStyle.textH3.copyWith(fontWeight: FontWeight.w500),
@@ -137,9 +137,9 @@ class _WeatherPageState extends State<WeatherPage> with StatefulWidgetUtilsMixin
                           weather.appDayFormatted,
                           style: AppStyle.textCaption1,
                         ),
-                        SizedBox(height: 2),
+                        const SizedBox(height: 2),
                         BoxedIcon(weather.appIcon),
-                        SizedBox(height: 2),
+                        const SizedBox(height: 2),
                         Text(
                           "${weather.temperatureInCelsius}°",
                           style: AppStyle.textBody1.copyWith(fontWeight: FontWeight.w500),
@@ -162,11 +162,11 @@ class _WeatherPageState extends State<WeatherPage> with StatefulWidgetUtilsMixin
     }
 
     return Card(
-      margin: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       child: Container(
         // Constraint max with to prevent stretching on big screen
-        constraints: BoxConstraints(maxWidth: 420.0),
-        padding: EdgeInsets.all(12.0),
+        constraints: const BoxConstraints(maxWidth: 420.0),
+        padding: const EdgeInsets.all(12.0),
         width: double.infinity,
         child: BlocBuilder(
             bloc: _weatherBloc,
@@ -180,12 +180,12 @@ class _WeatherPageState extends State<WeatherPage> with StatefulWidgetUtilsMixin
                   children: <Widget>[
                     // Day
                     _buildDayForecast(context, state.weatherData.currentWeather),
-                    SizedBox(height: 4.0),
+                    const SizedBox(height: 4.0),
                     Divider(
                       height: 2.0,
                       color: (_themeBloc.state.isDark ? Colors.white : Colors.black).withOpacity(.5),
                     ),
-                    SizedBox(height: 16.0),
+                    const SizedBox(height: 16.0),
                     // 5 Day
                     build5DaysForecast(state.weatherData.forecast)
                   ],
@@ -218,12 +218,12 @@ class _WeatherPageState extends State<WeatherPage> with StatefulWidgetUtilsMixin
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   width: 24.0,
                   height: 24.0,
                   child: CircularProgressIndicator(),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 12.0,
                 ),
                 Text(
