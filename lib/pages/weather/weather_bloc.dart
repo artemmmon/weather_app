@@ -16,7 +16,7 @@ abstract class WeatherState extends Equatable {
 
   String get lastUpdateFormatted {
     try {
-      return DateFormat.Hm("en_US").format(lastUpdate);
+      return DateFormat.MEd("en_US").add_Hm().format(lastUpdate);
     } catch (_) {
       return "NA";
     }

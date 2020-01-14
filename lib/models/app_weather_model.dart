@@ -34,18 +34,6 @@ class AppWeatherModel extends Equatable {
         '"date"': _dateMillis,
       };
 
-  @override
-  List<Object> get props => [
-        areaName,
-        weatherDescription,
-        weatherIcon,
-        temperatureInCelsius,
-        weatherIcon,
-        _dateMillis,
-      ];
-}
-
-extension IconParserExtensions on AppWeatherModel {
   String get appDayFormatted {
     String weakDay;
     switch (this.date.weekday) {
@@ -118,4 +106,14 @@ extension IconParserExtensions on AppWeatherModel {
         break;
     }
   }
+
+  @override
+  List<Object> get props => [
+        areaName,
+        weatherDescription,
+        weatherIcon,
+        temperatureInCelsius,
+        weatherIcon,
+        _dateMillis,
+      ];
 }
